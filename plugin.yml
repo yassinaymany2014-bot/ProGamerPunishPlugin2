@@ -1,0 +1,31 @@
+name: ProGamerPunish
+version: 1.0.0
+main: com.progamermc.punish.PunishPlugin
+api-version: '1.21'
+description: Ban, banip, kick, mute and warn with custom screens
+commands:
+  ban: {description: Ban a player, usage: "/ban <player> [duration] [reason]", permission: punish.ban}
+  banip: {description: Ban an IP or a player's IP, usage: "/banip <player|ip> [duration] [reason]", permission: punish.banip, aliases: [ipban, ban-ip]}
+  kick: {description: Kick a player, usage: "/kick <player> [reason]", permission: punish.kick}
+  mute: {description: Mute a player, usage: "/mute <player> [duration] [reason]", permission: punish.mute}
+  warn: {description: Warn a player, usage: "/warn <player> [reason]", permission: punish.warn}
+  unban: {description: Unban a player, usage: "/unban <player>", permission: punish.unban, aliases: [pardon]}
+  unbanip: {description: Unban an IP, usage: "/unbanip <ip|player>", permission: punish.unbanip, aliases: [pardon-ip]}
+  unmute: {description: Unmute a player, usage: "/unmute <player>", permission: punish.unmute}
+  warnings: {description: List warnings, usage: "/warnings <player>", permission: punish.warn}
+  punishreload: {description: Reload config, usage: "/punishreload", permission: punish.reload}
+permissions:
+  punish.*:
+    default: op
+    children: [punish.ban, punish.banip, punish.kick, punish.mute, punish.warn, punish.unban, punish.unbanip, punish.unmute, punish.reload, punish.notify]
+  punish.ban: {default: op}
+  punish.banip: {default: op}
+  punish.kick: {default: op}
+  punish.mute: {default: op}
+  punish.warn: {default: op}
+  punish.unban: {default: op}
+  punish.unbanip: {default: op}
+  punish.unmute: {default: op}
+  punish.reload: {default: op}
+  punish.notify: {default: op}
+  punish.bypass: {default: false}

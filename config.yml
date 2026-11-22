@@ -1,0 +1,78 @@
+# ProGamerPunish - messages use MiniMessage format:
+# https://docs.advntr.dev/minimessage/format.html
+# Placeholders: <reason> <staff> <player> <id> <total> <duration> <expires> <date>
+default-reason: "No reason given"
+allow-unknown-players: false     # true = allow punishing players who never joined
+public-broadcast: false          # true = announce punishments to everyone
+warn-threshold: 3                # auto-ban after N warnings (0 = off)
+warn-threshold-ban: "1d"         # e.g. 1d, 7d, perm
+warn-threshold-reason: "Too many warnings"
+muted-blocked-commands: [msg, tell, w, whisper, r, reply, me, say, mail, tm, teammsg]
+words:
+  permanent: "Permanent"
+  never: "Never"
+
+# The screens shown to the player (the disconnect screen)
+screens:
+  ban: |-
+    <red><bold>YOU ARE BANNED</bold>
+
+    <gray>Server: <gold>progamerMc
+    <gray>Reason: <white><reason>
+    <gray>Banned by: <white><staff>
+    <gray>Duration: <white><total>
+    <gray>Expires: <white><expires>
+    <gray>Time left: <yellow><duration>
+
+    <gray>Ban ID: <dark_gray>#<id>
+    <gray>Appeal on Discord: <aqua>discord.gg/R4QdNr8Bs
+  ipban: |-
+    <red><bold>YOUR IP IS BANNED</bold>
+
+    <gray>Server: <gold>progamerMc
+    <gray>Reason: <white><reason>
+    <gray>Banned by: <white><staff>
+    <gray>Duration: <white><total>
+    <gray>Expires: <white><expires>
+    <gray>Time left: <yellow><duration>
+
+    <gray>Ban ID: <dark_gray>#<id>
+    <gray>Appeal on Discord: <aqua>discord.gg/R4QdNr8Bs
+  kick: |-
+    <red><bold>YOU WERE KICKED</bold>
+
+    <gray>Server: <gold>progamerMc
+    <gray>Reason: <white><reason>
+    <gray>Kicked by: <white><staff>
+
+    <green>You can rejoin anytime.
+
+messages:
+  prefix: "<dark_gray>[<gold>progamerMc<dark_gray>] "
+  reloaded: "<prefix><green>Config reloaded."
+  unknown-player: "<prefix><red>Player <white><player><red> has never joined this server."
+  not-online: "<prefix><red><player> is not online."
+  bypass: "<prefix><red>You cannot punish this player."
+  no-ip: "<prefix><red>No IP known for <white><player><red>."
+  not-found: "<prefix><red>No active punishment found for <white><player><red>."
+  usage-ban: "<prefix><red>Usage: /ban [player] [duration] [reason]  <gray>(no duration = permanent)"
+  usage-banip: "<prefix><red>Usage: /banip [player or ip] [duration] [reason]"
+  usage-kick: "<prefix><red>Usage: /kick [player] [reason]"
+  usage-mute: "<prefix><red>Usage: /mute [player] [duration] [reason]  <gray>(no duration = permanent)"
+  usage-warn: "<prefix><red>Usage: /warn [player] [reason]"
+  usage-unban: "<prefix><red>Usage: /unban [player]"
+  usage-unbanip: "<prefix><red>Usage: /unbanip [ip or player]"
+  usage-unmute: "<prefix><red>Usage: /unmute [player]"
+  usage-warnings: "<prefix><red>Usage: /warnings [player]"
+  notify: "<prefix><red><type> <white><player> <gray>by <white><staff> <gray>- <white><reason> <gray>(<yellow><total><gray>) <dark_gray>#<id>"
+  public: "<prefix><white><player> <gray>was punished (<red><type><gray>): <white><reason>"
+  you-muted: "<prefix><red>You have been muted. <gray>Reason: <white><reason> <gray>Time: <yellow><total>"
+  you-unmuted: "<prefix><green>You have been unmuted."
+  you-warned: "<prefix><yellow>You have been warned by <white><staff><yellow>: <white><reason>"
+  muted-chat: "<prefix><red>You are muted. <gray>Reason: <white><reason> <gray>Time left: <yellow><duration>"
+  muted-command: "<prefix><red>You cannot use this command while muted. <gray>Time left: <yellow><duration>"
+  unban-done: "<prefix><green>Unbanned <white><player><green>."
+  unbanip-done: "<prefix><green>Unbanned <white><player><green>."
+  unmute-done: "<prefix><green>Unmuted <white><player><green>."
+  warnings-header: "<prefix><gold>Warnings for <white><player><gold>: <yellow><count>"
+  warnings-line: "<gray>- <white><reason> <gray>by <white><staff> <dark_gray>(<date>) #<id>"
